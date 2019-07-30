@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes on Fernando Soares - UX, UI &amp; Front End Design</title>
+    <link>https://frrrnd.github.io/notes/</link>
+    <description>Recent content in Notes on Fernando Soares - UX, UI &amp; Front End Design</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Mar 2019 22:19:15 -0300</lastBuildDate>
+    
+	<atom:link href="https://frrrnd.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>O básico do z-index</title>
+      <link>https://frrrnd.github.io/notes/o-basico-do-z-index/</link>
+      <pubDate>Fri, 15 Mar 2019 12:19:15 -0300</pubDate>
+      
+      <guid>https://frrrnd.github.io/notes/o-basico-do-z-index/</guid>
+      <description>O z-index é a propriedade do CSS que define o posicionamento dos elementos no eixo Z, ou seja, ele define a distância do elemento em relação a tela, mais próximo ou mais afastado.
+Somente os elementos que contém position absolute, relative ou fixed aceitam o z-index. Quanto maior for o valor, mais próximo da tela ele ficará.
+Basicamente, não existem limitações para o valor do z-index. Mas a maioria dos browsers trabalha com os valores de 32 bits (−2147483648 para +2147483647).</description>
+    </item>
+    
+    <item>
+      <title>27</title>
+      <link>https://frrrnd.github.io/notes/27/</link>
+      <pubDate>Thu, 14 Dec 2017 12:19:15 -0300</pubDate>
+      
+      <guid>https://frrrnd.github.io/notes/27/</guid>
+      <description>É. Os 27 chegaram.
+2017 foi um ano agitado. Tive várias mudanças, inclusive de endereço, o que não é algo anormal pra mim. Um coisa que eu sou muito a favor, é a mudança. Seja de hábitos, de estilo, de forma de pensar. Mudar é sempre bom mas é você que vai decidir se é pra bom ou pra ruim.
+Minha vida profissional tem me alegrado bastante. Uma das coisas que eu mais gosto de fazer é estudar o que eu gosto, que no caso, é a minha profissão.</description>
+    </item>
+    
+    <item>
+      <title>Breakpoints em mixin com Sass</title>
+      <link>https://frrrnd.github.io/notes/breakpoints-em-mixin-com-sass/</link>
+      <pubDate>Fri, 24 Mar 2017 20:04:43 -0300</pubDate>
+      
+      <guid>https://frrrnd.github.io/notes/breakpoints-em-mixin-com-sass/</guid>
+      <description>Fazer sites responsivos não é uma tarefa fácil, a organização as vezes acaba sendo um inimigo para o desenvolvimento e a manutenção. Por isso, o desenvolvedor sempre procura um método ou técnica pra facilitar esses serviços. Trago aqui uma dica pra quem se perde em meio a media queries e ajustes responsivos.
+Criaremos 1 mixin com 3 condições em SASS para ser usado no elemento que for necessário: small para smartphones, medium para tablets, e large para computadores (os valores podem ser alterados como você achar melhor).</description>
+    </item>
+    
+  </channel>
+</rss>
