@@ -12,17 +12,6 @@
     
     
     <item>
-      <title>O básico do z-index</title>
-      <link>https://frrrnd.github.io/notes/o-basico-do-z-index/</link>
-      <pubDate>Fri, 15 Mar 2019 12:19:15 -0300</pubDate>
-      
-      <guid>https://frrrnd.github.io/notes/o-basico-do-z-index/</guid>
-      <description>O z-index é a propriedade do CSS que define o posicionamento dos elementos no eixo Z, ou seja, ele define a distância do elemento em relação a tela, mais próximo ou mais afastado.
-Somente os elementos que contém position absolute, relative ou fixed aceitam o z-index. Quanto maior for o valor, mais próximo da tela ele ficará.
-Basicamente, não existem limitações para o valor do z-index. Mas a maioria dos browsers trabalha com os valores de 32 bits (−2147483648 para +2147483647).</description>
-    </item>
-    
-    <item>
       <title>27</title>
       <link>https://frrrnd.github.io/notes/27/</link>
       <pubDate>Thu, 14 Dec 2017 12:19:15 -0300</pubDate>
@@ -31,6 +20,17 @@ Basicamente, não existem limitações para o valor do z-index. Mas a maioria do
       <description>É. Os 27 chegaram.
 2017 foi um ano agitado. Tive várias mudanças, inclusive de endereço, o que não é algo anormal pra mim. Um coisa que eu sou muito a favor, é a mudança. Seja de hábitos, de estilo, de forma de pensar. Mudar é sempre bom mas é você que vai decidir se é pra bom ou pra ruim.
 Minha vida profissional tem me alegrado bastante. Uma das coisas que eu mais gosto de fazer é estudar o que eu gosto, que no caso, é a minha profissão.</description>
+    </item>
+    
+    <item>
+      <title>O básico do z-index</title>
+      <link>https://frrrnd.github.io/notes/o-basico-do-z-index/</link>
+      <pubDate>Sun, 17 Sep 2017 09:55:15 -0300</pubDate>
+      
+      <guid>https://frrrnd.github.io/notes/o-basico-do-z-index/</guid>
+      <description>O z-index é a propriedade do CSS que define o posicionamento dos elementos no eixo Z, ou seja, ele define a distância do elemento em relação a tela, mais próximo ou mais afastado.
+Somente os elementos que contém position absolute, relative ou fixed aceitam o z-index. Quanto maior for o valor, mais próximo da tela ele ficará.
+Basicamente, não existem limitações para o valor do z-index. Mas a maioria dos browsers trabalha com os valores de 32 bits (−2147483648 para +2147483647).</description>
     </item>
     
     <item>
