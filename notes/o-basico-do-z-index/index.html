@@ -15,16 +15,12 @@
 	<meta name="twitter:image:alt" content="Fernando Soares - UX, UI &amp; Front End Design">
 	<meta name="twitter:site" content="@frrrnd">
 	<meta name="theme-color" content="#161821">
-	<link rel="stylesheet" href="https://frrrnd.github.io/css/main.css">
-	<link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/tokyo-night-dark.min.css">
-	
-	
-	
+	<link rel="preload" href="https://frrrnd.github.io/css/main.css" as="style">
+	<link rel="preload" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/tokyo-night-dark.min.css" as="style">
 	<link rel="shortcut icon" href="https://frrrnd.github.io//images/favicon.png" type="image/x-icon">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="preload" as="style">
 </head>
 <body>
 	<div class="container">
@@ -44,7 +40,7 @@
 				<ul>
 					<li><a href="https://frrrnd.github.io//sobre">sobre</a></li>
 					<li><a href="https://frrrnd.github.io//notes">notes</a></li>
-					<li><button type="button" class="sw"><i class="theme-icon"></i></button></li>
+					<li><button aria-label="Trocar tema" type="button" class="sw"><i class="theme-icon"></i></button></li>
 				</ul>
 			</nav>
 		</div>
@@ -86,7 +82,7 @@
 
 
 			</div>
-			<button type="button" id="button" class="gotop">
+			<button aria-label="Ir para o topo" type="button" id="button" class="gotop">
 				<svg x="0px" y="0px" width="72px" height="72px" viewBox="0 0 444.819 444.819" xml:space="preserve">
 					<g>
 						<path d="M434.252,208.708L248.387,22.843c-7.042-7.043-15.693-10.564-25.977-10.564c-10.467,0-19.036,3.521-25.697,10.564
