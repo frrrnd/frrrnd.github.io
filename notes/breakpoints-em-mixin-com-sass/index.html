@@ -1,147 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Breakpoints em mixin com Sass  - Fernando Soares - Designer e Desenvolvedor de Interfaces </title>
-	<base href="https://frnd.design/">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Breakpoints em mixin com Sass"/>
-	<meta property="og:title" content="Breakpoints em mixin com Sass  - Fernando Soares - Designer e Desenvolvedor de Interfaces ">
-	<meta property="og:description" content="Breakpoints em mixin com Sass">
-	<meta property="og:image" content="https://frnd.design/images/meta-image.jpg">
-	<meta property="og:url" content="https://frnd.design/notes/breakpoints-em-mixin-com-sass/">
-	<meta property="og:site_name" content="Fernando Soares - Designer e Desenvolvedor de Interfaces">
-	<meta name="twitter:card" content="https://frnd.design/images/meta-image.jpg">
-	<meta name="twitter:image:alt" content="Fernando Soares - Designer e Desenvolvedor de Interfaces">
-	<meta name="twitter:site" content="@frrrnd">
-	<meta name="theme-color" content="#6350D1">
-	<link rel="preload stylesheet" href="https://frnd.design/css/main.css" as="style">
-	<link rel="preload stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/tokyo-night-dark.min.css" as="style">
-	<link rel="shortcut icon" href="https://frnd.design/images/favicon.png" type="image/x-icon">
-	<link rel="apple-touch-icon" href="https://frnd.design/images/logo-vector.svg"/>
-	<link rel="mask-icon" href="https://frnd.design/images/logo-vector.svg">
-	<link rel="manifest" href="https://frnd.design/manifest.json">
-</head>
-<body>
-
-<header class="header" role="banner">
-	<div class="wrap">
-		<div class="header__logo">
-			<a href="https://frnd.design/" title="Fernando Soares">
-				<svg width="29" height="45" viewBox="0 0 49 45" fill="none">
-					<path class="logo--letter" d="M10.8944 13.5076L2 22.5807L10.8944 31.6537L19.7887 22.5807L10.8944 13.5076Z" stroke-width="2" stroke-miterlimit="10"/>
-					<path class="logo--letter" d="M7.59636 1.516L28.0783 22.3827L7.11658 43.7655H17.5967L38.5583 22.3827L24.5849 8.12706H38.5583L45.6431 1L7.11658 1.01095L7.59636 1.516Z" stroke-width="2" stroke-miterlimit="10"/>
-				</svg>
-			</a>
-		</div>
-		<div class="header__menu">
-			<nav class="top-nav" role="navigation">
-				<ul>
-					<li><a href="https://frnd.design/sobre">sobre</a></li>
-					<li><a href="https://frnd.design/notes">notes</a></li>
-					<li><button aria-label="Trocar tema" type="button" class="sw"><i class="theme-icon"></i></button></li>
-				</ul>
-			</nav>
-		</div>
-	</div>
-</header>
-
-<main class="main article__container" role="main">
-	<article class="wrap">
-		<div class="article__wrap">
-			<header role="banner" class="article__header">
-				<h1>Breakpoints em mixin com Sass</h1>
-				<time>24.03.2017</time>
-				 
-			</header>
-		
-			<section class="article__content">
-				<p>Fazer sites responsivos não é uma tarefa fácil, a organização as vezes acaba sendo um inimigo para o desenvolvimento e a manutenção. Por isso, o desenvolvedor sempre procura um método ou técnica pra facilitar esses serviços. Trago aqui uma dica pra quem se perde em meio a media queries e ajustes responsivos.</p>
-<p>Criaremos 1 mixin com 3 condições em SASS para ser usado no elemento que for necessário: small para smartphones, medium para tablets, e large para computadores (os valores podem ser alterados como você achar melhor).</p>
-<p>Veja o mixin a seguir:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>@<span style="color:#66d9ef">mixin</span> <span style="color:#f92672">breakpoint</span><span style="color:#f92672">($</span><span style="color:#f92672">name</span><span style="color:#f92672">)</span> {
-</span></span><span style="display:flex;"><span>    @<span style="color:#66d9ef">if</span> <span style="color:#f92672">$</span><span style="color:#f92672">name</span> <span style="color:#f92672">==</span> <span style="color:#f92672">small</span> {
-</span></span><span style="display:flex;"><span>        @<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">max-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">767px</span><span style="color:#f92672">)</span> {
-</span></span><span style="display:flex;"><span>            @<span style="color:#66d9ef">content</span>;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    @<span style="color:#66d9ef">else</span> <span style="color:#f92672">if</span> <span style="color:#f92672">$</span><span style="color:#f92672">name</span> <span style="color:#f92672">==</span> <span style="color:#f92672">medium</span> {
-</span></span><span style="display:flex;"><span>        @<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">max-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">1024px</span><span style="color:#f92672">)</span> {
-</span></span><span style="display:flex;"><span>            @<span style="color:#66d9ef">content</span>;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    @<span style="color:#66d9ef">else</span> <span style="color:#f92672">if</span> <span style="color:#f92672">$</span><span style="color:#f92672">name</span> <span style="color:#f92672">==</span> <span style="color:#f92672">large</span> {
-</span></span><span style="display:flex;"><span>        @<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">min-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">1025px</span><span style="color:#f92672">)</span> {
-</span></span><span style="display:flex;"><span>            @<span style="color:#66d9ef">content</span>;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Tá bem fácil de entender.</p>
-<p>“Mas como eu aplico esse mixin para os meus componentes?”</p>
-<p>A aplicação do mixin é simples:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">elemento</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">@include</span> <span style="color:#960050;background-color:#1e0010">breakpoint(small)</span> <span style="color:#960050;background-color:#1e0010">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    @<span style="color:#66d9ef">include</span> <span style="color:#f92672">breakpoint</span><span style="color:#f92672">(</span><span style="color:#f92672">medium</span><span style="color:#f92672">)</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">width</span><span style="color:#f92672">:</span> <span style="color:#f92672">80</span><span style="color:#f92672">%;</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    @<span style="color:#66d9ef">include</span> <span style="color:#f92672">breakpoint</span><span style="color:#f92672">(</span><span style="color:#f92672">large</span><span style="color:#f92672">)</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">width</span><span style="color:#f92672">:</span> <span style="color:#f92672">50</span><span style="color:#f92672">%;</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">}</span>
-</span></span></code></pre></div><p>Esse código será compilado para:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>    @<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">max-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">767px</span><span style="color:#f92672">)</span> { 
-</span></span><span style="display:flex;"><span>	   .<span style="color:#a6e22e">elemento</span> { 
-</span></span><span style="display:flex;"><span>	     <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>; 
-</span></span><span style="display:flex;"><span>	   } 
-</span></span><span style="display:flex;"><span>	} 
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	@<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">max-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">1024px</span><span style="color:#f92672">)</span> { 
-</span></span><span style="display:flex;"><span>	   .<span style="color:#a6e22e">elemento</span> { 
-</span></span><span style="display:flex;"><span>	     <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">80</span><span style="color:#66d9ef">%</span>; 
-</span></span><span style="display:flex;"><span>	   } 
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	 
-</span></span><span style="display:flex;"><span>	@<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">min-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">1025px</span><span style="color:#f92672">)</span> { 
-</span></span><span style="display:flex;"><span>	   .<span style="color:#a6e22e">elemento</span> { 
-</span></span><span style="display:flex;"><span>	     <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>; 
-</span></span><span style="display:flex;"><span>	   } 
-</span></span><span style="display:flex;"><span>	} 
-</span></span></code></pre></div><p>Dependendo do seu layout, você não vai precisar aplicar as 3 condições para um elemento.</p>
-<p>Esse mixin facilita na hora de você fazer um ajuste, ele concentra os estilos do elemento em um lugar só e deixa tudo organizado. Ideal pra quem usa o Atomic Design como metodologia.</p>
-
-			</section>
-
-			
-		</div>
-	</article>
-</main>
-
-	<footer class="footer" role="contentinfo">
-		<div class="footer-infos">
-			<div class="wrap">
-				<div class="col">
-					<ul>
-						<li><a href="mailto:frnd@null.net" title="Fala comigo">frnd@null.net</a></li>
-					</ul>
-				</div>
-				<div class="col">
-					<nav class="bottom-nav" role="navigation">
-						<ul>
-							
-							<li><a href="../../links" title="Meus links">links</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
-	<script src="https://frnd.design/javascript/app.js"></script>
-	</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=utf-8><title>Breakpoints em mixin com Sass - Fernando Soares - Designer e Desenvolvedor de Interfaces</title><base href=https://frnd.design/><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Breakpoints em mixin com Sass"><meta property="og:title" content="Breakpoints em mixin com Sass  - Fernando Soares - Designer e Desenvolvedor de Interfaces "><meta property="og:description" content="Breakpoints em mixin com Sass"><meta property="og:image" content="https://frnd.design/images/meta-image.jpg"><meta property="og:url" content="https://frnd.design/notes/breakpoints-em-mixin-com-sass/"><meta property="og:site_name" content="Fernando Soares - Designer e Desenvolvedor de Interfaces"><meta name=twitter:card content="https://frnd.design/images/meta-image.jpg"><meta name=twitter:image:alt content="Fernando Soares - Designer e Desenvolvedor de Interfaces"><meta name=twitter:site content="@frrrnd"><meta name=theme-color content="#6350D1"><link rel="preload stylesheet" href=https://frnd.design/css/main.css as=style><link rel="preload stylesheet" href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/tokyo-night-dark.min.css as=style><link rel="shortcut icon" href=https://frnd.design/images/favicon.png type=image/x-icon><link rel=apple-touch-icon href=https://frnd.design/images/logo-vector.svg><link rel=mask-icon href=https://frnd.design/images/logo-vector.svg><link rel=manifest href=https://frnd.design/manifest.json></head><body><header class=header role=banner><div class=wrap><div class=header__logo><a href=https://frnd.design/ title="Fernando Soares"><svg width="29" height="45" viewBox="0 0 49 45" fill="none"><path class="logo--letter" d="M10.8944 13.5076 2 22.5807l8.8944 9.073 8.8943-9.073-8.8943-9.0731z" stroke-width="2" stroke-miterlimit="10"/><path class="logo--letter" d="M7.59636 1.516 28.0783 22.3827 7.11658 43.7655H17.5967L38.5583 22.3827 24.5849 8.12706H38.5583L45.6431 1 7.11658 1.01095l.47978.50505z" stroke-width="2" stroke-miterlimit="10"/></svg></a></div><div class=header__menu><nav class=top-nav role=navigation><ul><li><a href=https://frnd.design/sobre>sobre</a></li><li><a href=https://frnd.design/notes>notes</a></li><li><button aria-label="Trocar tema" type=button class=sw><i class=theme-icon></i></button></li></ul></nav></div></div></header><main class="main article__container" role=main><article class=wrap><div class=article__wrap><header role=banner class=article__header><h1>Breakpoints em mixin com Sass</h1><time>24.03.2017</time></header><section class=article__content><p>Fazer sites responsivos não é uma tarefa fácil, a organização as vezes acaba sendo um inimigo para o desenvolvimento e a manutenção. Por isso, o desenvolvedor sempre procura um método ou técnica pra facilitar esses serviços. Trago aqui uma dica pra quem se perde em meio a media queries e ajustes responsivos.</p><p>Criaremos 1 mixin com 3 condições em SASS para ser usado no elemento que for necessário: small para smartphones, medium para tablets, e large para computadores (os valores podem ser alterados como você achar melhor).</p><p>Veja o mixin a seguir:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=display:flex><span>@<span style=color:#66d9ef>mixin</span> <span style=color:#f92672>breakpoint</span><span style=color:#f92672>($</span><span style=color:#f92672>name</span><span style=color:#f92672>)</span> {
+</span></span><span style=display:flex><span>    @<span style=color:#66d9ef>if</span> <span style=color:#f92672>$</span><span style=color:#f92672>name</span> <span style=color:#f92672>==</span> <span style=color:#f92672>small</span> {
+</span></span><span style=display:flex><span>        @<span style=color:#66d9ef>media</span> <span style=color:#f92672>(</span><span style=color:#f92672>max-width</span><span style=color:#f92672>:</span> <span style=color:#f92672>767px</span><span style=color:#f92672>)</span> {
+</span></span><span style=display:flex><span>            @<span style=color:#66d9ef>content</span>;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    @<span style=color:#66d9ef>else</span> <span style=color:#f92672>if</span> <span style=color:#f92672>$</span><span style=color:#f92672>name</span> <span style=color:#f92672>==</span> <span style=color:#f92672>medium</span> {
+</span></span><span style=display:flex><span>        @<span style=color:#66d9ef>media</span> <span style=color:#f92672>(</span><span style=color:#f92672>max-width</span><span style=color:#f92672>:</span> <span style=color:#f92672>1024px</span><span style=color:#f92672>)</span> {
+</span></span><span style=display:flex><span>            @<span style=color:#66d9ef>content</span>;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    @<span style=color:#66d9ef>else</span> <span style=color:#f92672>if</span> <span style=color:#f92672>$</span><span style=color:#f92672>name</span> <span style=color:#f92672>==</span> <span style=color:#f92672>large</span> {
+</span></span><span style=display:flex><span>        @<span style=color:#66d9ef>media</span> <span style=color:#f92672>(</span><span style=color:#f92672>min-width</span><span style=color:#f92672>:</span> <span style=color:#f92672>1025px</span><span style=color:#f92672>)</span> {
+</span></span><span style=display:flex><span>            @<span style=color:#66d9ef>content</span>;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>Tá bem fácil de entender.</p><p>“Mas como eu aplico esse mixin para os meus componentes?”</p><p>A aplicação do mixin é simples:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=display:flex><span>.<span style=color:#a6e22e>elemento</span> {
+</span></span><span style=display:flex><span>    <span style=color:#960050;background-color:#1e0010>@include</span> <span style=color:#960050;background-color:#1e0010>breakpoint(small)</span> <span style=color:#960050;background-color:#1e0010>{</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    @<span style=color:#66d9ef>include</span> <span style=color:#f92672>breakpoint</span><span style=color:#f92672>(</span><span style=color:#f92672>medium</span><span style=color:#f92672>)</span> {
+</span></span><span style=display:flex><span>        <span style=color:#f92672>width</span><span style=color:#f92672>:</span> <span style=color:#f92672>80</span><span style=color:#f92672>%;</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    @<span style=color:#66d9ef>include</span> <span style=color:#f92672>breakpoint</span><span style=color:#f92672>(</span><span style=color:#f92672>large</span><span style=color:#f92672>)</span> {
+</span></span><span style=display:flex><span>        <span style=color:#f92672>width</span><span style=color:#f92672>:</span> <span style=color:#f92672>50</span><span style=color:#f92672>%;</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>}</span>
+</span></span></code></pre></div><p>Esse código será compilado para:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=display:flex><span>    @<span style=color:#66d9ef>media</span> <span style=color:#f92672>(</span><span style=color:#f92672>max-width</span><span style=color:#f92672>:</span> <span style=color:#f92672>767px</span><span style=color:#f92672>)</span> { 
+</span></span><span style=display:flex><span>	   .<span style=color:#a6e22e>elemento</span> { 
+</span></span><span style=display:flex><span>	     <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>; 
+</span></span><span style=display:flex><span>	   } 
+</span></span><span style=display:flex><span>	} 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	@<span style=color:#66d9ef>media</span> <span style=color:#f92672>(</span><span style=color:#f92672>max-width</span><span style=color:#f92672>:</span> <span style=color:#f92672>1024px</span><span style=color:#f92672>)</span> { 
+</span></span><span style=display:flex><span>	   .<span style=color:#a6e22e>elemento</span> { 
+</span></span><span style=display:flex><span>	     <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>80</span><span style=color:#66d9ef>%</span>; 
+</span></span><span style=display:flex><span>	   } 
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>	 
+</span></span><span style=display:flex><span>	@<span style=color:#66d9ef>media</span> <span style=color:#f92672>(</span><span style=color:#f92672>min-width</span><span style=color:#f92672>:</span> <span style=color:#f92672>1025px</span><span style=color:#f92672>)</span> { 
+</span></span><span style=display:flex><span>	   .<span style=color:#a6e22e>elemento</span> { 
+</span></span><span style=display:flex><span>	     <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>50</span><span style=color:#66d9ef>%</span>; 
+</span></span><span style=display:flex><span>	   } 
+</span></span><span style=display:flex><span>	} 
+</span></span></code></pre></div><p>Dependendo do seu layout, você não vai precisar aplicar as 3 condições para um elemento.</p><p>Esse mixin facilita na hora de você fazer um ajuste, ele concentra os estilos do elemento em um lugar só e deixa tudo organizado. Ideal pra quem usa o Atomic Design como metodologia.</p></section></div></article></main><footer class=footer role=contentinfo><div class=footer-infos><div class=wrap><div class=col><ul><li><a href=mailto:frnd@null.net title="Fala comigo">frnd@null.net</a></li></ul></div><div class=col><nav class=bottom-nav role=navigation><ul><li><a href=../../links title="Meus links">links</a></li></ul></nav></div></div></div></footer><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js></script>
+<script src=https://frnd.design/javascript/app.js></script></body></html>
